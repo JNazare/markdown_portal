@@ -32,6 +32,7 @@ app.get('/login', login.get_oauth_code);
 app.get('/home', login.get_oauth_token);
 app.get('/product', product.show);
 app.get('/product/:file', product.showlab);
+app.post('/product/:file/save', product.savelab);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

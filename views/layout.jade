@@ -12,3 +12,16 @@ html
 			block content
 		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
 		script(src='http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js')
+		script(src="/javascripts/ace-editor/src/ace.js")
+		script(src='/javascripts/marked.js')
+		script(src='/javascripts/toggle.js')
+		script(src='/javascripts/render_markdown.js')
+		script.
+			marked.setOptions({ gfm: true; });
+		script.
+			var editor = ace.edit("editor");
+			editor.setTheme("ace/theme/github");
+			document.getElementById('editor').style.fontSize='14px';
+			editor.setShowPrintMargin(false);
+			editor.getSession().setMode("ace/mode/markdown");
+			editor.getSession().setUseWrapMode(true);

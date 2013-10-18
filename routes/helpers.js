@@ -45,7 +45,8 @@ exports.get_file_structure = function(req, callback){
 }
 
 exports.get_file = function(req, callback){
-	var mypath = '/repos/StartupInstitute/markdown_curriculum/contents/'+req.track+'/'+req.params.file+'?'+req.session.token;
+	var mypath = '/repos/StartupInstitute/markdown_curriculum/contents/'+req.track+'/'+req.params.file+'.md?'+req.session.token;
+	console.log(mypath);
 	var options = {
     url: 'https://api.github.com'+mypath,
     method: 'GET',
@@ -53,7 +54,37 @@ exports.get_file = function(req, callback){
 	request(options, function (error, response, contents) {
 		if (error) { console.log(error); }
 		if (!error && response.statusCode == 200) {
-			callback(contents);
+			request('https://api.github.com'+mypath, function (error, reply, metadata){
+				var blob = JSON.parse(metadata).sha; 
+				callback({"contents": contents, "blob": blob, "saveurl": "/"+req.track+"/"+req.params.file+"/save"});
+			})
+		}
+	});
+}
+
+exports.save_file = function(req, callback){
+	var relative_path = '/repos/StartupInstitute/markdown_curriculum/contents/'+req.track+'/'+req.params.file+'.md?'+req.session.token;
+	console.log(req.body.content_to_save);
+	var content = new Buffer(req.body.content_to_save).toString('base64');
+	content = String(content);
+	var full_path = 'https://api.github.com'+relative_path;
+	var message = 'Update file';
+	var sha = req.body.blob_to_save;
+
+	var options = {
+		"method" : "PUT",
+		"url" : full_path,
+		"json" : {
+			"message" : "my commit message",
+			"content" : content,
+			"sha" : sha
+		}
+	}
+    request(options, function (error, response, body) {
+		if (error) { console.log(error); }
+		if (response.statusCode != 200) { console.log(body); }
+		if (!error && response.statusCode == 200) {
+			callback("SAVED");
 		}
 	});
 }

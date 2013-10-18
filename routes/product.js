@@ -9,11 +9,23 @@ exports.show = function(req, res){
 
 exports.showlab = function(req, res){
 	req.track = "product";
-	console.log("PARAMS");
 	console.log(req.params.file);
-	res.render('index', {root: './public'} );
-	// helpers.get_file(req, function(contents){ 
-	    
-	//     //{root: './public'} 
-	// });
+	helpers.get_file_structure(req, function(files){
+		helpers.get_file(req, function(result){ 
+			res.render('index', {
+				root: './public', 
+				contents: result.contents, 
+				files: files, 
+				blob: result.blob, 
+				saveurl: result.saveurl
+			});
+		});
+	})
+}
+
+exports.savelab = function(req, res){
+	req.track = "product";
+	helpers.save_file(req, function(callback){
+		res.send("HERE");
+	});
 }

@@ -2,7 +2,7 @@ extends layout
 
 block nav
 	center 
-		img(src="images/si_arrow.png" width="100px" height="100px")
+		img(src="/images/si_arrow.png" width="100px" height="100px")
 		h3 Startup Institute
 		h4 BOSTON
 		p Check here for the labs for the fall program
@@ -12,11 +12,25 @@ block nav
 				br
 		if(files)
 			each file in files
-				a(href=file.url) #{file.month}-#{file.day} #{file.name}
+				a(href=file.url) #{file.month}.#{file.day} #{file.name}
 				br
 		br
 		a(href="/login") 
 			button.btn.btn-default(type='button') LOGIN
 
 block content
-	p Content goes here
+	if(contents)
+		form(name='saveme', action=saveurl, method='post')
+			input(type='hidden', name='content_to_save', id='content_to_save' value='#{contents}')
+			input(type='hidden', name='blob_to_save', id='blob_to_save' value='#{blob}')
+			button.btn.btn-default(type='button' name='view-button' id='view-button') VIEW
+			button.btn.btn-default(type='button' name='edit-button' id='edit-button') EDIT
+			button.btn.btn-default(type='submit' name='save-button' id='save-button') SAVE
+			br
+			br
+			#view-mask(style='display: none;' id='view_foreditcontent') #{contents}
+			#editor-mask(style='display: visible;' id='edit_foreditcontent')
+				#editor-container(style='position: relative; height: 500px;')
+					#editor(style='position: absolute; top: 0; right: 0; bottom: 0; left: 0;') #{contents}
+	//- #view-panel
+	//- 	input(type='hidden', id='contents', name='contents', value='#{contents}')
