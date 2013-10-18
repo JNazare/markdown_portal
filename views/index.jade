@@ -1,0 +1,22 @@
+extends layout
+
+block nav
+	center 
+		img(src="images/si_arrow.png" width="100px" height="100px")
+		h3 Startup Institute
+		h4 BOSTON
+		p Check here for the labs for the fall program
+		if(folders)
+			each folder in folders
+				a(href=folder) #{folder}
+				br
+		if(files)
+			each file in files
+				a(href=file.url) #{file.month}-#{file.day} #{file.name}
+				br
+		br
+		a(href="/login") 
+			button.btn.btn-default(type='button') LOGIN
+
+block content
+	p Content goes here
