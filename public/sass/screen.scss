@@ -1,0 +1,67 @@
+@import "core-styles/si-library";
+
+html, body {
+  height: 100%;
+}
+
+// Layout
+.wrapper {
+  width:90%;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1000px;
+  $zen-column-count: 6;
+  @include zen-grid-container;
+
+  #navbar {
+    @include zen-grid-item( 2, 1 );
+  }
+  #content {
+    @include zen-grid-item( 4, 3 );
+  }
+  @media screen and (max-width: 800px) {
+  }
+}
+
+// Style
+#navbar {
+  text-align: center;
+  .inner {
+    padding: 20px 20px 0;
+    position: fixed;
+    height: 100%;
+    background: $off-white-dark;
+    width: 20%;
+  }
+  h3, h2 {
+    margin-top: 0;
+    line-height: 1.2em;
+  }
+  p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+    @include lead-text;
+  }
+  nav {
+    @include vertical-menu;
+  }
+  .log-in-out a button {
+    @include button-secondary;
+  }
+}
+#content {
+  p {
+    margin-bottom: 1em;
+  }
+  ul {
+    margin: 0 0 1em 0;
+  }
+  @media screen and (max-width:800px) {
+    pre:hover {
+      width: inherit;
+      position: static;
+      left: 0;
+    }
+  }
+}

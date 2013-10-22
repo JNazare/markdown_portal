@@ -1,27 +1,28 @@
 doctype 5
 html
-	head
-		title = Curriculum
-		link(rel='stylesheet', href='http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css')
-		link(rel='stylesheet', href='/stylesheets/style.css')
-	body
-		.wrapper
-			#navbar.col-md-3 
-				block nav
-		#content.col-md-9
-			block content
-		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
-		script(src='http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js')
-		script(src="/javascripts/ace-editor/src/ace.js")
-		script(src='/javascripts/marked.js')
-		script(src='/javascripts/toggle.js')
-		script(src='/javascripts/render_markdown.js')
-		script.
-			marked.setOptions({ gfm: true; });
-		script.
-			var editor = ace.edit("editor");
-			editor.setTheme("ace/theme/github");
-			document.getElementById('editor').style.fontSize='14px';
-			editor.setShowPrintMargin(false);
-			editor.getSession().setMode("ace/mode/markdown");
-			editor.getSession().setUseWrapMode(true);
+    head
+        title = Curriculum
+        link(rel='stylesheet', href='/stylesheets/screen.css')
+    body
+        .wrapper
+            #navbar
+                .inner
+                    block nav
+            #content
+                .inner
+                    block content
+        script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+        script(src='http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js')
+        script(src="/javascripts/ace-editor/src/ace.js")
+        script(src='/javascripts/marked.js')
+        script(src='/javascripts/toggle.js')
+        script(src='/javascripts/render_markdown.js')
+        script.
+            marked.setOptions({ gfm: true; });
+        script.
+            var editor = ace.edit("editor");
+            editor.setTheme("ace/theme/github");
+            document.getElementById('editor').style.fontSize='14px';
+            editor.setShowPrintMargin(false);
+            editor.getSession().setMode("ace/mode/markdown");
+            editor.getSession().setUseWrapMode(true);
