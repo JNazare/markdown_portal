@@ -15,7 +15,8 @@ $( "#save-button" ).click(function() {
 	var code = editor.getSession().getValue();
 	var blob = $('#blob_to_save').val();
 	var url = $('#url_to_save').val()
+	$('#saved').css('display', 'block');
 	$.post(url, {content_to_save: code, blob_to_save: blob}, function(response){
-		console.log("Saved!");
+		console.log("Saved");
 	});
 });
