@@ -87,3 +87,7 @@ exports.save_file = function(req, callback){
 	});
 }
 
+exports.upload_images = function(req, callback){
+	var path = 'https://api.imgur.com/3/image';
+}
+
