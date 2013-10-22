@@ -25,8 +25,13 @@ exports.get_oauth_token = function(req, res){
 	    	req.session.token = token;
 	    	console.log("Logged in!");
 	    	helpers.get_folder_structure(req, function(folders){ 
-	    		res.render('index', {folders: folders}); 
+	    		res.render('index', {folders: folders, logged_in: 'true'}); 
 	    	});
 	  	}
 	})
+}
+
+exports.logout = function(req, res){
+	req.session.destroy();
+	res.render('index');
 }

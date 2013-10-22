@@ -15,8 +15,12 @@ block nav
 				a(href=file.url) #{file.month}.#{file.day} #{file.name}
 				br
 		br
-		a(href="/login") 
-			button.btn.btn-default(type='button') LOGIN
+		if(logged_in=='true')
+			a(href="/logout") 
+				button.btn.btn-default(type='button') LOGOUT
+		else
+			a(href="/login") 
+				button.btn.btn-default(type='button') LOGIN
 
 block content
 	if(contents)

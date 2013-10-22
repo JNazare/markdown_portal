@@ -30,6 +30,7 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/login', login.get_oauth_code);
+app.get('/logout', login.logout);
 app.get('/home', login.get_oauth_token);
 app.get('/product', product.show);
 app.get('/product/:file', product.showlab);
