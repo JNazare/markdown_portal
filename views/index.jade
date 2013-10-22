@@ -1,42 +1,44 @@
 extends layout
 
 block nav
-	center 
-		img(src="/images/si_arrow.png" width="100px" height="100px")
-		h3 Startup Institute
-		h4 BOSTON
-		p Check here for the labs for the fall program
-		if(folders)
-			each folder in folders
-				a(href=folder) #{folder}
-				br
-		if(files)
-			each file in files
-				a(href=file.url) #{file.month}.#{file.day} #{file.name}
-				br
-		br
-		if(logged_in=='true')
-			a(href="/logout") 
-				button.btn.btn-default(type='button') LOGOUT
-		else
-			a(href="/login") 
-				button.btn.btn-default(type='button') LOGIN
+  img(src="/images/si_arrow.png" width="100px" height="100px")
+  h3 Startup Institute
+  h4 BOSTON
+  p Check here for the labs for the fall program
+  nav
+    if(folders)
+      ul
+        each folder in folders
+          li
+            a(href=folder) #{folder}
+    if(files)
+      ul
+        each file in files
+          li
+            a(href=file.url) #{file.month}.#{file.day} #{file.name}
+  .log-in-out
+    if(logged_in=='true')
+      a(href="/logout") 
+        button.btn.btn-default(type='button') LOGOUT
+    else
+      a(href="/login") 
+        button.btn.btn-default(type='button') LOGIN
 
 block content
-	if(contents)
-		form(name='saveme', id='saveme')
-			input(type='hidden', name='content_to_save', id='content_to_save' value='#{contents}')
-			input(type='hidden', name='blob_to_save', id='blob_to_save' value='#{blob}')
-			input(type='hidden', name='url_to_save', id='url_to_save' value='#{saveurl}')
-			button.btn.btn-default(type='button' name='view-button' id='view-button') VIEW
-			button.btn.btn-default(type='button' name='edit-button' id='edit-button') EDIT
-			button.btn.btn-default(type='submit' name='save-button' id='save-button') SAVE
-			label(style='display: none;' name='saved' id='saved') SAVED!
-			br
-			br
-			#view-mask(style='display: none;' id='view_foreditcontent') #{contents}
-			#editor-mask(style='display: visible;' id='edit_foreditcontent')
-				#editor-container(style='position: relative; height: 500px;')
-					#editor(style='position: absolute; top: 0; right: 0; bottom: 0; left: 0;') #{contents}
-	//- #view-panel
-	//- 	input(type='hidden', id='contents', name='contents', value='#{contents}')
+  if(contents)
+    form(name='saveme', id='saveme')
+      input(type='hidden', name='content_to_save', id='content_to_save' value='#{contents}')
+      input(type='hidden', name='blob_to_save', id='blob_to_save' value='#{blob}')
+      input(type='hidden', name='url_to_save', id='url_to_save' value='#{saveurl}')
+      button.btn.btn-default(type='button' name='view-button' id='view-button') VIEW
+      button.btn.btn-default(type='button' name='edit-button' id='edit-button') EDIT
+      button.btn.btn-default(type='submit' name='save-button' id='save-button') SAVE
+      label(style='display: none;' name='saved' id='saved') SAVED!
+      br
+      br
+      #view-mask(style='display: none;' id='view_foreditcontent') #{contents}
+      #editor-mask(style='display: visible;' id='edit_foreditcontent')
+        #editor-container(style='position: relative; height: 500px;')
+          #editor(style='position: absolute; top: 0; right: 0; bottom: 0; left: 0;') #{contents}
+  //- #view-panel
+  //-   input(type='hidden', id='contents', name='contents', value='#{contents}')

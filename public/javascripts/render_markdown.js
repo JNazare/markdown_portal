@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 	var editor = ace.edit("editor");
-	console.log("EY");
+//Eyyy Jules got it to work! Eyyyyy!!!!	console.log("EY");
 	var code = editor.getSession().getValue();
 	console.log(code);
 	$('#content_to_save').html(code);

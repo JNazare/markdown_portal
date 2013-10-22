@@ -1,0 +1,3 @@
+[submodule "public/sass/core-styles"]
+	path = public/sass/core-styles
+	url = git@github.com:StartupInstitute/core-styles.git
