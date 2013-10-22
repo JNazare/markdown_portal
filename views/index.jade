@@ -20,9 +20,10 @@ block nav
 
 block content
 	if(contents)
-		form(name='saveme', action=saveurl, method='post')
+		form(name='saveme', id='saveme')
 			input(type='hidden', name='content_to_save', id='content_to_save' value='#{contents}')
 			input(type='hidden', name='blob_to_save', id='blob_to_save' value='#{blob}')
+			input(type='hidden', name='url_to_save', id='url_to_save' value='#{saveurl}')
 			button.btn.btn-default(type='button' name='view-button' id='view-button') VIEW
 			button.btn.btn-default(type='button' name='edit-button' id='edit-button') EDIT
 			button.btn.btn-default(type='submit' name='save-button' id='save-button') SAVE

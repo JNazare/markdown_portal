@@ -3,6 +3,7 @@ var express = require('express')
   , user = require('./routes/user')
   , login = require('./routes/login')
   , product = require('./routes/product')
+  , intro = require('./routes/intro')
   , http = require('http')
   , path = require('path');
 
@@ -33,6 +34,9 @@ app.get('/home', login.get_oauth_token);
 app.get('/product', product.show);
 app.get('/product/:file', product.showlab);
 app.post('/product/:file/save', product.savelab);
+app.get('/intro', intro.show);
+app.get('/intro/:file', intro.showlab);
+app.post('/intro/:file/save', intro.savelab);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

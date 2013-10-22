@@ -46,7 +46,6 @@ exports.get_file_structure = function(req, callback){
 
 exports.get_file = function(req, callback){
 	var mypath = '/repos/StartupInstitute/markdown_curriculum/contents/'+req.track+'/'+req.params.file+'.md?'+req.session.token;
-	console.log(mypath);
 	var options = {
     url: 'https://api.github.com'+mypath,
     method: 'GET',
@@ -64,7 +63,6 @@ exports.get_file = function(req, callback){
 
 exports.save_file = function(req, callback){
 	var relative_path = '/repos/StartupInstitute/markdown_curriculum/contents/'+req.track+'/'+req.params.file+'.md?'+req.session.token;
-	console.log(req.body.content_to_save);
 	var content = new Buffer(req.body.content_to_save).toString('base64');
 	content = String(content);
 	var full_path = 'https://api.github.com'+relative_path;
@@ -82,7 +80,7 @@ exports.save_file = function(req, callback){
 	}
     request(options, function (error, response, body) {
 		if (error) { console.log(error); }
-		if (response.statusCode != 200) { console.log(body); }
+		if (response.statusCode != 200) {}
 		if (!error && response.statusCode == 200) {
 			callback("SAVED");
 		}
