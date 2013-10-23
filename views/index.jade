@@ -30,9 +30,9 @@ block content
       input(type='hidden', name='content_to_save', id='content_to_save' value='#{contents}')
       input(type='hidden', name='blob_to_save', id='blob_to_save' value='#{blob}')
       input(type='hidden', name='url_to_save', id='url_to_save' value='#{saveurl}')
-      button.btn.btn-default(type='button' name='view-button' id='view-button') VIEW
-      button.btn.btn-default(type='button' name='edit-button' id='edit-button') EDIT
-      button.btn.btn-default(type='submit' name='save-button' id='save-button') SAVE
+      button.btn.btn-default.btn-view(type='button' name='view-button' id='view-button') VIEW
+      button.btn.btn-default.btn-edit(type='button' name='edit-button' id='edit-button') EDIT
+      button.btn.btn-default.btn-save(type='submit' name='save-button' id='save-button') SAVE
       label(style='display: none;' name='saved' id='saved') SAVED!
       br
       br
