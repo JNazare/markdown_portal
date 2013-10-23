@@ -995,15 +995,23 @@ html, body {
 }
 
 /* line 54, ../sass/screen.scss */
+#content .btn {
+  margin-top: 40px;
+}
+/* line 56, ../sass/screen.scss */
+#content .btn.btn-view, #content .btn.btn-edit {
+  margin-right: 20px;
+}
+/* line 60, ../sass/screen.scss */
 #content p {
   margin-bottom: 1em;
 }
-/* line 57, ../sass/screen.scss */
+/* line 63, ../sass/screen.scss */
 #content ul {
   margin: 0 0 1em 0;
 }
 @media screen and (max-width: 800px) {
-  /* line 61, ../sass/screen.scss */
+  /* line 67, ../sass/screen.scss */
   #content pre:hover {
     width: inherit;
     position: static;
