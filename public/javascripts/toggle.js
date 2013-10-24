@@ -32,18 +32,21 @@ $ ("#upload-button").click(function(){
 })
 $ ("#h1-button").click(function(){
 	var editor = ace.edit("editor");
+	editor.splitLine();
 	var cursor = editor.getCursorPosition();
 	editor.moveCursorTo(cursor.row, 0);
 	editor.insert("#");
 })
 $ ("#h2-button").click(function(){
 	var editor = ace.edit("editor");
+	editor.splitLine();
 	var cursor = editor.getCursorPosition();
 	editor.moveCursorTo(cursor.row, 0);
 	editor.insert("##");
 })
 $ ("#h3-button").click(function(){
 	var editor = ace.edit("editor");
+	editor.splitLine();
 	var cursor = editor.getCursorPosition();
 	editor.moveCursorTo(cursor.row, 0);
 	editor.insert("###");
@@ -51,12 +54,12 @@ $ ("#h3-button").click(function(){
 $ ("#bold-button").click(function(){
 	var editor = ace.edit("editor");
 	var cursor = editor.getCursorPosition();
-	editor.insert("** **");
+	editor.insert("**Insert bolded text here**");
 })
 $ ("#italic-button").click(function(){
 	var editor = ace.edit("editor");
 	var cursor = editor.getCursorPosition();
-	editor.insert("* *");
+	editor.insert("*Insert italic text here*");
 })
 $ ("#link-button").click(function(){
 	var editor = ace.edit("editor");
@@ -65,7 +68,14 @@ $ ("#link-button").click(function(){
 })
 $ ("#bullet-button").click(function(){
 	var editor = ace.edit("editor");
+	editor.splitLine();
 	var cursor = editor.getCursorPosition();
 	editor.moveCursorTo(cursor.row, 0);
 	editor.insert("* \n* \n* ");
+})
+$ ("#code-button").click(function(){
+	var editor = ace.edit("editor");
+	var cursor = editor.getCursorPosition();
+	editor.moveCursorTo(cursor.row, 0);
+	editor.insert("```\nInsert code here\n```");
 })

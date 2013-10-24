@@ -729,15 +729,15 @@ form input[type=text], form input[type=email], form input[type=url], form input[
 }
 /* line 21, ../sass/core-styles/partials/_forms.scss */
 form input[type=reset], form input[type=button], form button[type=reset], form button[type=button] {
-  font-size: 14.00004px;
+  font-size: 10.00004px;
   letter-spacing: 1px;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 700;
-  padding: 0.7em 4em 0.75em;
+  padding: 0.4em 1em 0.4em;
   color: #4b606c;
   display: inline-block;
-  border-radius: 5px;
+  border-radius: 1px;
   background: #f3f4f5;
   border: 1px solid #dbdbdb;
 }
@@ -755,23 +755,23 @@ form input[type=submit], form button[type=submit] {
   -moz-transition: none;
   -o-transition: none;
   transition: none;
-  font-size: 14.00004px;
+  font-size: 10.00004px;
   letter-spacing: 1px;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 700;
   color: white;
-  padding: 0.7em 4em 0.75em;
+  padding: 0.4em 1em 0.4em;
   display: inline-block;
-  border-radius: 5px;
+  border-radius: 1px;
   background: #3ca3da;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #41b0ec), color-stop(100%, #3ca3da));
   background-image: -webkit-linear-gradient(#41b0ec, #3ca3da);
   background-image: -moz-linear-gradient(#41b0ec, #3ca3da);
   background-image: -o-linear-gradient(#41b0ec, #3ca3da);
   background-image: linear-gradient(#41b0ec, #3ca3da);
-  border-bottom: 3px solid #2a84b4;
-  border-top: 3px solid #41b0ec;
+/*  border-bottom: 3px solid #2a84b4;
+  border-top: 3px solid #41b0ec;*/
   border-right: none;
   border-left: none;
 }
