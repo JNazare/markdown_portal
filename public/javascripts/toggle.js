@@ -20,3 +20,52 @@ $( "#save-button" ).click(function() {
 		console.log("Saved");
 	});
 });
+$ ("#upload-button").click(function(){
+	var editor = ace.edit("editor");
+	var cursor = editor.getCursorPosition();
+	filepicker.pickAndStore({mimetype:"image/*"},
+    {location:"S3"}, function(InkBlobs){
+    	var url = JSON.stringify(InkBlobs[0].url);
+    	var urlslice = url.slice(1, (url.length-1));
+   		editor.insert("![Text to link]("+urlslice+")");
+    });
+})
+$ ("#h1-button").click(function(){
+	var editor = ace.edit("editor");
+	var cursor = editor.getCursorPosition();
+	editor.moveCursorTo(cursor.row, 0);
+	editor.insert("#");
+})
+$ ("#h2-button").click(function(){
+	var editor = ace.edit("editor");
+	var cursor = editor.getCursorPosition();
+	editor.moveCursorTo(cursor.row, 0);
+	editor.insert("##");
+})
+$ ("#h3-button").click(function(){
+	var editor = ace.edit("editor");
+	var cursor = editor.getCursorPosition();
+	editor.moveCursorTo(cursor.row, 0);
+	editor.insert("###");
+})
+$ ("#bold-button").click(function(){
+	var editor = ace.edit("editor");
+	var cursor = editor.getCursorPosition();
+	editor.insert("** **");
+})
+$ ("#italic-button").click(function(){
+	var editor = ace.edit("editor");
+	var cursor = editor.getCursorPosition();
+	editor.insert("* *");
+})
+$ ("#link-button").click(function(){
+	var editor = ace.edit("editor");
+	var cursor = editor.getCursorPosition();
+	editor.insert("[Text to link](Insert URL here)");
+})
+$ ("#bullet-button").click(function(){
+	var editor = ace.edit("editor");
+	var cursor = editor.getCursorPosition();
+	editor.moveCursorTo(cursor.row, 0);
+	editor.insert("* \n* \n* ");
+})
