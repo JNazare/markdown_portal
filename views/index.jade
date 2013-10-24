@@ -49,12 +49,25 @@ block content
         button.btn.btn-default(type='button' name='upload-button' id='upload-button') IMAGE
         button.btn.btn-default(type='button' name='link-button' id='link-button') LINK
         button.btn.btn-default(type='button' name='code-button' id='code-button') CODE
+        button.btn.btn-default(type='button' name='assets-button' id='assets-button') ASSETS
       label(style='display: none;' name='saved' id='saved') SAVED!
       br
       br
       #view-mask(style='display: none;' id='view_foreditcontent') #{contents}
       #editor-mask(style='display: visible;' id='edit_foreditcontent')
-        #editor-container(style='position: relative; height: 500px;')
+        #editor-container(style='position: relative; height: 400px;')
           #editor(style='position: absolute; top: 0; right: 0; bottom: 0; left: 0;') #{contents}
-  //- #view-panel
-  //-   input(type='hidden', id='contents', name='contents', value='#{contents}')
+      #asset-mask
+        .btn-group
+          button.btn.btn-default(type='button')
+            img(src='https://www.filepicker.io/api/file/bH8xsvAMS1qtRi2NTnny' name='create-button' id='create-button' width='50px')
+          button.btn.btn-default(type='button')
+            img(src='https://www.filepicker.io/api/file/kYd18f95RhydTD69InvX' name='discover-button' id='discover-button' width='50px')
+          button.btn.btn-default(type='button')
+            img(src='https://www.filepicker.io/api/file/5tgZQb3uRtCaU7zrXbHO' name='feedback-button' id='feedback-button' width='50px')
+          button.btn.btn-default(type='button')
+            img(src='https://www.filepicker.io/api/file/JyipiCMT56UHL7px5xtY' name='read-button' id='read-button' width='50px')
+          button.btn.btn-default(type='button')
+            img(src='https://www.filepicker.io/api/file/6vaf7cMoTi60a0WbK6tg' name='stretch-button' id='stretch-button' width='50px')
+          button.btn.btn-default(type='button')
+            img(src='https://www.filepicker.io/api/file/FJN8VOmQQuyDhgg0tEMH' name='watch-button' id='watch-button' width='50px')
