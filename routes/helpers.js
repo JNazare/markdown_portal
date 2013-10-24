@@ -78,9 +78,12 @@ exports.save_file = function(req, callback){
 			"sha" : sha
 		}
 	}
+	console.log(options);
     request(options, function (error, response, body) {
 		if (error) { console.log(error); }
-		if (response.statusCode != 200) {}
+		if (response.statusCode != 200) {
+			console.log(response.statusCode);
+		}
 		if (!error && response.statusCode == 200) {
 			callback("SAVED");
 		}
