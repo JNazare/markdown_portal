@@ -27,60 +27,61 @@ block nav
 block content
   if(contents)
     form(name='saveme', id='saveme')
-      input(type='hidden', name='content_to_save', id='content_to_save' value='#{contents}')
-      input(type='hidden', name='blob_to_save', id='blob_to_save' value='#{blob}')
-      input(type='hidden', name='url_to_save', id='url_to_save' value='#{saveurl}')
-      .btn-group
-        button.btn.btn-default.btn-default(type='button' name='edit-button' id='edit-button') EDIT
-        button.btn.btn-default.btn-default(type='button' name='view-button' id='view-button') VIEW
-        button.btn.btn-default.btn-default(type='submit' name='save-button' id='save-button') SAVE
-      &nbsp;&nbsp;&nbsp;
-      .btn-group
-        button.btn.btn-default(type='button' name='h1-button' id='h1-button') H1
-        button.btn.btn-default(type='button' name='h2-button' id='h2-button') H2
-        button.btn.btn-default(type='button' name='h3-button' id='h3-button') H3
-      &nbsp;&nbsp;&nbsp;
-      .btn-group
-        button.btn.btn-default(type='button' name='bold-button' id='bold-button') B
-        button.btn.btn-default(type='button' name='italic-button' id='italic-button') I
-        button.btn.btn-default(type='button' name='bullet-button' id='bullet-button') LIST
-        button.btn.btn-default(type='button' name='hr-button' id='hr-button') HR
-      &nbsp;&nbsp;&nbsp;
-      .btn-group
-        button.btn.btn-default(type='button' name='upload-button' id='upload-button') IMAGE
-        button.btn.btn-default(type='button' name='link-button' id='link-button') LINK
-        button.btn.btn-default(type='button' name='code-button' id='code-button') CODE
-        button.btn.btn-default(type='button' name='table-button' id='table-button') TABLE
-      label(style='display: none;' name='saved' id='saved') SAVED!
-      br
+      center
+        input(type='hidden', name='content_to_save', id='content_to_save' value='#{contents}')
+        input(type='hidden', name='blob_to_save', id='blob_to_save' value='#{blob}')
+        input(type='hidden', name='url_to_save', id='url_to_save' value='#{saveurl}')
+        .btn-group
+          button.btn.btn-default.btn-default(type='button' name='edit-button' id='edit-button') EDIT
+          button.btn.btn-default.btn-default(type='button' name='view-button' id='view-button') VIEW
+          button.btn.btn-default.btn-default(type='submit' name='save-button' id='save-button') SAVE
+        &nbsp;&nbsp;&nbsp;
+        .btn-group
+          button.btn.btn-default(type='button' name='h1-button' id='h1-button') H1
+          button.btn.btn-default(type='button' name='h2-button' id='h2-button') H2
+          button.btn.btn-default(type='button' name='h3-button' id='h3-button') H3
+        &nbsp;&nbsp;&nbsp;
+        .btn-group
+          button.btn.btn-default(type='button' name='bold-button' id='bold-button') B
+          button.btn.btn-default(type='button' name='italic-button' id='italic-button') I
+          button.btn.btn-default(type='button' name='bullet-button' id='bullet-button') LIST
+          button.btn.btn-default(type='button' name='hr-button' id='hr-button') HR
+        &nbsp;&nbsp;&nbsp;
+        .btn-group
+          button.btn.btn-default(type='button' name='upload-button' id='upload-button') IMAGE
+          button.btn.btn-default(type='button' name='link-button' id='link-button') LINK
+          button.btn.btn-default(type='button' name='code-button' id='code-button') CODE
+          button.btn.btn-default(type='button' name='table-button' id='table-button') TABLE
+        label(style='display: none;' name='saved' id='saved') SAVED!
       br
       #view-mask(style='display: none;' id='view_foreditcontent') #{contents}
       #editor-mask(style='display: visible;' id='edit_foreditcontent')
-        #editor-container(style='position: relative; height: 400px;')
+        #editor-container(style='position: relative; height: 500px;')
           #editor(style='position: absolute; top: 0; right: 0; bottom: 0; left: 0;') #{contents}
       #asset-mask
-        .btn-group
-          button.btn.btn-default(type='button')
-            img(src='https://www.filepicker.io/api/file/zRZXCoRuTGmSlClBZFFQ' name='collaborate-button' id='collaborate-button' width='30px')
-          button.btn.btn-default(type='button')
-            img(src='https://www.filepicker.io/api/file/I7KpBIhJTUqtC8eHc4bt' name='create-button' id='create-button' width='30px')
-           button.btn.btn-default(type='button')
-            img(src='https://www.filepicker.io/api/file/dn5eBe7nQpKzRFerdJbo' name='deliver-button' id='deliver-button' width='30px')
-          button.btn.btn-default(type='button')
-            img(src='https://www.filepicker.io/api/file/He9AFZ42TQy4cV9Epbko' name='discover-button' id='discover-button' width='30px')
-          button.btn.btn-default(type='button')
-            img(src='https://www.filepicker.io/api/file/0tr8RKTmQvKlVrdqwfIn' name='download-button' id='download-button' width='30px')
-          button.btn.btn-default(type='button')
-            img(src='https://www.filepicker.io/api/file/bu9sUmL8RW2898hLaq7J' name='feedback-button' id='feedback-button' width='30px')
-          button.btn.btn-default(type='button')
-            img(src='https://www.filepicker.io/api/file/KXr4ysJGQ7imXNM60TcX' name='install-button' id='install-button' width='30px')
-          button.btn.btn-default(type='button')
-            img(src='https://www.filepicker.io/api/file/d0zChLE4SFq43UHbIkmk' name='read-button' id='read-button' width='30px')
-          button.btn.btn-default(type='button')
-            img(src='https://www.filepicker.io/api/file/ZrqFeG5CSpyNCUfs6abB' name='reflect-button' id='reflect-button' width='30px')
-          button.btn.btn-default(type='button')
-            img(src='https://www.filepicker.io/api/file/CsUJqHnwSKK5kMZ9HZp5' name='spiral-button' id='spiral-button' width='30px')
-          button.btn.btn-default(type='button')
-            img(src='https://www.filepicker.io/api/file/U1UTndBSAuxplpGfh7kg' name='stretch-button' id='stretch-button' width='30px')
-          button.btn.btn-default(type='button')
-            img(src='https://www.filepicker.io/api/file/PJYQirO4Qa26p8uUMqrP' name='watch-button' id='watch-button' width='30px')
+        center
+          .btn-group
+            button.btn.btn-default(type='button')
+              img(src='https://www.filepicker.io/api/file/zRZXCoRuTGmSlClBZFFQ' name='collaborate-button' id='collaborate-button' width='30px')
+            button.btn.btn-default(type='button')
+              img(src='https://www.filepicker.io/api/file/I7KpBIhJTUqtC8eHc4bt' name='create-button' id='create-button' width='30px')
+             button.btn.btn-default(type='button')
+              img(src='https://www.filepicker.io/api/file/dn5eBe7nQpKzRFerdJbo' name='deliver-button' id='deliver-button' width='30px')
+            button.btn.btn-default(type='button')
+              img(src='https://www.filepicker.io/api/file/He9AFZ42TQy4cV9Epbko' name='discover-button' id='discover-button' width='30px')
+            button.btn.btn-default(type='button')
+              img(src='https://www.filepicker.io/api/file/0tr8RKTmQvKlVrdqwfIn' name='download-button' id='download-button' width='30px')
+            button.btn.btn-default(type='button')
+              img(src='https://www.filepicker.io/api/file/bu9sUmL8RW2898hLaq7J' name='feedback-button' id='feedback-button' width='30px')
+            button.btn.btn-default(type='button')
+              img(src='https://www.filepicker.io/api/file/KXr4ysJGQ7imXNM60TcX' name='install-button' id='install-button' width='30px')
+            button.btn.btn-default(type='button')
+              img(src='https://www.filepicker.io/api/file/d0zChLE4SFq43UHbIkmk' name='read-button' id='read-button' width='30px')
+            button.btn.btn-default(type='button')
+              img(src='https://www.filepicker.io/api/file/ZrqFeG5CSpyNCUfs6abB' name='reflect-button' id='reflect-button' width='30px')
+            button.btn.btn-default(type='button')
+              img(src='https://www.filepicker.io/api/file/CsUJqHnwSKK5kMZ9HZp5' name='spiral-button' id='spiral-button' width='30px')
+            button.btn.btn-default(type='button')
+              img(src='https://www.filepicker.io/api/file/U1UTndBSAuxplpGfh7kg' name='stretch-button' id='stretch-button' width='30px')
+            button.btn.btn-default(type='button')
+              img(src='https://www.filepicker.io/api/file/PJYQirO4Qa26p8uUMqrP' name='watch-button' id='watch-button' width='30px')
