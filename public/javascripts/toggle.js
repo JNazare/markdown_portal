@@ -103,33 +103,76 @@ $ ("#code-button").click(function(){
 	editor.moveCursorTo(cursor.row, 0);
 	editor.insert("```\nInsert code here\n```");
 })
+$ ("#table-button").click(function(){
+	var editor = ace.edit("editor");
+	var cursor = editor.getCursorPosition();
+	editor.moveCursorTo(cursor.row, 0);
+	editor.insert("|   Put   |   Headers   |   Here   |\n| ------- | ----------- | -------- |\n|   Put   |    Text     |   Here   |");
+})
+$ ("#hr-button").click(function(){
+	var editor = ace.edit("editor");
+	var cursor = editor.getCursorPosition();
+	editor.moveCursorTo(cursor.row, 0);
+	editor.insert("-----");
+})
+
+$ ("#collaborate-button").click(function(){
+	var editor = ace.edit("editor");
+	var cursor = editor.getCursorPosition();
+	editor.insert("![Collaborate](https://www.filepicker.io/api/file/zRZXCoRuTGmSlClBZFFQ)");
+})
 $ ("#create-button").click(function(){
 	var editor = ace.edit("editor");
 	var cursor = editor.getCursorPosition();
-	editor.insert("![Create](https://www.filepicker.io/api/file/bH8xsvAMS1qtRi2NTnny)");
+	editor.insert("![Create](https://www.filepicker.io/api/file/I7KpBIhJTUqtC8eHc4bt)");
+})
+$ ("#deliver-button").click(function(){
+	var editor = ace.edit("editor");
+	var cursor = editor.getCursorPosition();
+	editor.insert("![Deliver](https://www.filepicker.io/api/file/dn5eBe7nQpKzRFerdJbo)");
 })
 $ ("#discover-button").click(function(){
 	var editor = ace.edit("editor");
 	var cursor = editor.getCursorPosition();
-	editor.insert("![Discover](https://www.filepicker.io/api/file/kYd18f95RhydTD69InvX)");
+	editor.insert("![Discover](https://www.filepicker.io/api/file/He9AFZ42TQy4cV9Epbko)");
+})
+$ ("#download-button").click(function(){
+	var editor = ace.edit("editor");
+	var cursor = editor.getCursorPosition();
+	editor.insert("![Download](https://www.filepicker.io/api/file/0tr8RKTmQvKlVrdqwfIn)");
 })
 $ ("#feedback-button").click(function(){
 	var editor = ace.edit("editor");
 	var cursor = editor.getCursorPosition();
-	editor.insert("![Feedback](https://www.filepicker.io/api/file/5tgZQb3uRtCaU7zrXbHO)");
+	editor.insert("![Feedback](https://www.filepicker.io/api/file/bu9sUmL8RW2898hLaq7J)");
+})
+$ ("#install-button").click(function(){
+	var editor = ace.edit("editor");
+	var cursor = editor.getCursorPosition();
+	editor.insert("![Install](https://www.filepicker.io/api/file/KXr4ysJGQ7imXNM60TcX)");
 })
 $ ("#read-button").click(function(){
 	var editor = ace.edit("editor");
 	var cursor = editor.getCursorPosition();
-	editor.insert("![Read](https://www.filepicker.io/api/file/JyipiCMT56UHL7px5xtY)");
+	editor.insert("![Read](https://www.filepicker.io/api/file/d0zChLE4SFq43UHbIkmk)");
+})
+$ ("#reflect-button").click(function(){
+	var editor = ace.edit("editor");
+	var cursor = editor.getCursorPosition();
+	editor.insert("![Reflect](https://www.filepicker.io/api/file/ZrqFeG5CSpyNCUfs6abB)");
+})
+$ ("#spiral-button").click(function(){
+	var editor = ace.edit("editor");
+	var cursor = editor.getCursorPosition();
+	editor.insert("![Spiral](https://www.filepicker.io/api/file/CsUJqHnwSKK5kMZ9HZp5)");
 })
 $ ("#stretch-button").click(function(){
 	var editor = ace.edit("editor");
 	var cursor = editor.getCursorPosition();
-	editor.insert("![Stretch](https://www.filepicker.io/api/file/6vaf7cMoTi60a0WbK6tg)");
+	editor.insert("![Stretch](https://www.filepicker.io/api/file/U1UTndBSAuxplpGfh7kg)");
 })
 $ ("#watch-button").click(function(){
 	var editor = ace.edit("editor");
 	var cursor = editor.getCursorPosition();
-	editor.insert("![Watch](https://www.filepicker.io/api/file/FJN8VOmQQuyDhgg0tEMH)");
+	editor.insert("![Watch](https://www.filepicker.io/api/file/PJYQirO4Qa26p8uUMqrP)");
 })
