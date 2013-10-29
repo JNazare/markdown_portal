@@ -5,6 +5,7 @@ html
         link(rel='stylesheet', href='http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css')
         link(rel='stylesheet', href='/stylesheets/screen.css')
     body
+        input(type='hidden', name='filepicker_key', id='filepicker_key' value='#{FILEPICKER_KEY}')
         .wrapper
             #navbar
                 .inner
@@ -20,7 +21,7 @@ html
         script(src='/javascripts/render_markdown.js')
         script(type='text/javascript', src='http://api.filepicker.io/v1/filepicker.js')
         script.
-            filepicker.setKey('AwaB4L6qRaG0yML5QxTgtz');
+            filepicker.setKey( $('#filepicker_key').val() );
         script.
             marked.setOptions({ 
                 gfm: true; 

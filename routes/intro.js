@@ -17,7 +17,8 @@ exports.showlab = function(req, res){
 				contents: result.contents, 
 				files: files, 
 				blob: result.blob, 
-				saveurl: result.saveurl
+				saveurl: result.saveurl,
+				FILEPICKER_KEY: process.env.FILEPICKER_KEY
 			});
 		});
 	})
