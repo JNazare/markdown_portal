@@ -21,6 +21,7 @@ exports.get_oauth_token = function(req, res){
   	var client_secret = process.env.CLIENT_SECRET;
   	var fullPath = pathName+"?client_id="+client_id+"&redirect_uri="+redirect_uri+"&client_secret="+client_secret+"&code="+code;
   	request(fullPath, function (error, response, token) {
+  		console.log(token);
 		if (!error && response.statusCode == 200) {
 	    	req.session.token = token;
 	    	console.log("Logged in!");
