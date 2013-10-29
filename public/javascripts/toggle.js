@@ -119,60 +119,60 @@ $ ("#hr-button").click(function(){
 $ ("#collaborate-button").click(function(){
 	var editor = ace.edit("editor");
 	var cursor = editor.getCursorPosition();
-	editor.insert("![Collaborate](https://www.filepicker.io/api/file/zRZXCoRuTGmSlClBZFFQ)");
+	editor.insert("![Collaborate](https://raw.github.com/StartupInstitute/curriculum_github/master/public/images/collaborate.png)");
 })
 $ ("#create-button").click(function(){
 	var editor = ace.edit("editor");
 	var cursor = editor.getCursorPosition();
-	editor.insert("![Create](https://www.filepicker.io/api/file/I7KpBIhJTUqtC8eHc4bt)");
+	editor.insert("![Create](https://raw.github.com/StartupInstitute/curriculum_github/master/public/images/create.png)");
 })
 $ ("#deliver-button").click(function(){
 	var editor = ace.edit("editor");
 	var cursor = editor.getCursorPosition();
-	editor.insert("![Deliver](https://www.filepicker.io/api/file/dn5eBe7nQpKzRFerdJbo)");
+	editor.insert("![Deliver](https://raw.github.com/StartupInstitute/curriculum_github/master/public/images/deliver.png)");
 })
 $ ("#discover-button").click(function(){
 	var editor = ace.edit("editor");
 	var cursor = editor.getCursorPosition();
-	editor.insert("![Discover](https://www.filepicker.io/api/file/He9AFZ42TQy4cV9Epbko)");
+	editor.insert("![Discover](https://raw.github.com/StartupInstitute/curriculum_github/master/public/images/discover.png)");
 })
 $ ("#download-button").click(function(){
 	var editor = ace.edit("editor");
 	var cursor = editor.getCursorPosition();
-	editor.insert("![Download](https://www.filepicker.io/api/file/0tr8RKTmQvKlVrdqwfIn)");
+	editor.insert("![Download](https://raw.github.com/StartupInstitute/curriculum_github/master/public/images/download.png)");
 })
 $ ("#feedback-button").click(function(){
 	var editor = ace.edit("editor");
 	var cursor = editor.getCursorPosition();
-	editor.insert("![Feedback](https://www.filepicker.io/api/file/bu9sUmL8RW2898hLaq7J)");
+	editor.insert("![Feedback](https://raw.github.com/StartupInstitute/curriculum_github/master/public/images/feedback.png)");
 })
 $ ("#install-button").click(function(){
 	var editor = ace.edit("editor");
 	var cursor = editor.getCursorPosition();
-	editor.insert("![Install](https://www.filepicker.io/api/file/KXr4ysJGQ7imXNM60TcX)");
+	editor.insert("![Install](https://raw.github.com/StartupInstitute/curriculum_github/master/public/images/install.png)");
 })
 $ ("#read-button").click(function(){
 	var editor = ace.edit("editor");
 	var cursor = editor.getCursorPosition();
-	editor.insert("![Read](https://www.filepicker.io/api/file/d0zChLE4SFq43UHbIkmk)");
+	editor.insert("![Read](https://raw.github.com/StartupInstitute/curriculum_github/master/public/images/read.png)");
 })
 $ ("#reflect-button").click(function(){
 	var editor = ace.edit("editor");
 	var cursor = editor.getCursorPosition();
-	editor.insert("![Reflect](https://www.filepicker.io/api/file/ZrqFeG5CSpyNCUfs6abB)");
+	editor.insert("![Reflect](https://raw.github.com/StartupInstitute/curriculum_github/master/public/images/reflect.png)");
 })
 $ ("#spiral-button").click(function(){
 	var editor = ace.edit("editor");
 	var cursor = editor.getCursorPosition();
-	editor.insert("![Spiral](https://www.filepicker.io/api/file/CsUJqHnwSKK5kMZ9HZp5)");
+	editor.insert("![Spiral](https://raw.github.com/StartupInstitute/curriculum_github/master/public/images/spiral.png)");
 })
 $ ("#stretch-button").click(function(){
 	var editor = ace.edit("editor");
 	var cursor = editor.getCursorPosition();
-	editor.insert("![Stretch](https://www.filepicker.io/api/file/U1UTndBSAuxplpGfh7kg)");
+	editor.insert("![Stretch](https://raw.github.com/StartupInstitute/curriculum_github/master/public/images/stretch.png)");
 })
 $ ("#watch-button").click(function(){
 	var editor = ace.edit("editor");
 	var cursor = editor.getCursorPosition();
-	editor.insert("![Watch](https://www.filepicker.io/api/file/PJYQirO4Qa26p8uUMqrP)");
+	editor.insert("![Watch](https://raw.github.com/StartupInstitute/curriculum_github/master/public/images/watch.png)");
 })
