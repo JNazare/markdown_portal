@@ -3,9 +3,9 @@ var fs = require( 'fs' );
 var async = require( 'async' );
 
 exports.newlab = function(req, callback){
-	helpers.get_file_structure(req, function(files){
-		helpers.get_file(req, function(result){ 
-			res.render('index', {
+	get_file_structure(req, function(files){
+		get_file(req, function(result){ 
+			callback.render('index', {
 				logged_in: 'true',
 				root: './public', 
 				contents: result.contents, 
