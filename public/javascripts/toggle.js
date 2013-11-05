@@ -6,6 +6,21 @@ $( document ).ready(function() {
 	$('#view_foreditcontent').css('display', 'block');
 	$('#landing-panel').html(marked(welcomeText));
 	$('#view_foreditcontent').html(marked(code));
+	$("#edit-button").removeAttr("disabled", "disabled");
+	$("#view-button").attr("disabled", "disabled");
+	$("#h1-button").attr("disabled", "disabled");
+	$("#h2-button").attr("disabled", "disabled");
+	$("#h3-button").attr("disabled", "disabled");
+	$("#bold-button").attr("disabled", "disabled");
+	$("#italic-button").attr("disabled", "disabled");
+	$("#link-button").attr("disabled", "disabled");
+	$("#bullet-button").attr("disabled", "disabled");
+	$("#code-button").attr("disabled", "disabled");
+	$("#upload-button").attr("disabled", "disabled");
+	$("#hr-button").attr("disabled", "disabled");
+	$("#table-button").attr("disabled", "disabled");
+	$('#edit_foreditcontent').css('display', 'none');
+	$('#asset-mask').css('display', 'none');
 })
 
 $( "#edit-button" ).click(function() {
