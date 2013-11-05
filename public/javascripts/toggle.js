@@ -7,6 +7,7 @@ $( document ).ready(function() {
 	$('#edit_foreditcontent').css('display', 'none');
 	$('#asset-mask').css('display', 'none');
 	$('#view_foreditcontent').html(marked(code));
+	$('#landing-panel').html(marked(welcomeText));
 	$('#content_to_save').val(code);
 	$("#edit-button").removeAttr("disabled", "disabled");
 	$("#view-button").attr("disabled", "disabled");
@@ -21,7 +22,6 @@ $( document ).ready(function() {
 	$("#upload-button").attr("disabled", "disabled");
 	$("#hr-button").attr("disabled", "disabled");
 	$("#table-button").attr("disabled", "disabled");
-	$('#landing-panel').html(marked(welcomeText));
 })
 
 $( "#edit-button" ).click(function() {
