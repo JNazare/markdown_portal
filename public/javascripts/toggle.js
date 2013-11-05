@@ -3,6 +3,7 @@ $( document ).ready(function() {
 	console.log(welcomeText);
 	var code = $('#content_to_save').val();
 	console.log(code);
+	$('#view_foreditcontent').css('display', 'block');
 	$('#landing-panel').html(marked(welcomeText));
 	$('#view_foreditcontent').html(marked(code));
 })
