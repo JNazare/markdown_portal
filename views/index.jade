@@ -57,8 +57,8 @@ block content
           button.btn.btn-default(type='button' name='table-button' id='table-button') TABLE
         label(style='display: none;' name='saved' id='saved') SAVED!
       br
-      #view-mask(style='display: visible;' id='view_foreditcontent' name='view_foreditcontent')
-      #editor-mask(style='display: none;' id='edit_foreditcontent')
+      #view-mask(style='display: none;' id='view_foreditcontent') #{contents}
+      #editor-mask(style='display: visible;' id='edit_foreditcontent')
         #editor-container(style='position: relative; height: 500px;')
           #editor(style='position: absolute; top: 0; right: 0; bottom: 0; left: 0;') #{contents}
       #asset-mask
