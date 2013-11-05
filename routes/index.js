@@ -1,3 +1,8 @@
+var helpers = require('./helpers.js');
+
 exports.index = function(req, res){
-  res.render('index', {FILEPICKER_KEY: process.env.FILEPICKER_KEY});
+	helpers.getLandingPage(req, function(content){
+		console.log(content);
+  		res.render('index', {landingText: content, FILEPICKER_KEY: process.env.FILEPICKER_KEY});
+  	});
 };

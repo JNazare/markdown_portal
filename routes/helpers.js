@@ -2,6 +2,13 @@ var request = require('request');
 var fs = require( 'fs' );
 var async = require( 'async' );
 
+exports.getLandingPage = function(req, callback){
+	fs.readFile("welcome.md", 'utf8', function(err, data){
+		if (err) { throw err; }
+		callback(data);
+	});
+}
+
 exports.get_folder_structure = function(req, callback){
 	var mypath = '/repos/StartupInstitute/curriculum/contents?'+req.session.token;
 	var options = {

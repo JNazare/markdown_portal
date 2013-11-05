@@ -1,3 +1,9 @@
+$( document ).ready(function() {
+	var welcomeText = $("#landingText").val();
+	console.log(welcomeText);
+	$('#landing-panel').html(marked(welcomeText));
+})
+
 $( "#edit-button" ).click(function() {
 	$('#edit_foreditcontent').css('display', 'block');
 	$('#view_foreditcontent').css('display', 'none');

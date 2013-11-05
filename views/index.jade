@@ -25,6 +25,9 @@ block nav
         button.btn.btn-default(type='button') LOGIN
 
 block content
+  if(landingText)
+    input(type='hidden', name='landingText', id='landingText' value='#{landingText}')
+    #landing-panel(id='landing-panel') #{landingText}
   if(contents)
     form(name='saveme', id='saveme')
       center
