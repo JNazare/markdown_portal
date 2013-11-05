@@ -2,6 +2,10 @@ var request = require('request');
 var fs = require( 'fs' );
 var async = require( 'async' );
 
+exports.newlab = function(req, callback){
+	callback.send("hi");
+}
+
 exports.getLandingPage = function(req, callback){
 	fs.readFile("welcome.md", 'utf8', function(err, data){
 		if (err) { throw err; }
