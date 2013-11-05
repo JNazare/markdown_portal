@@ -1,11 +1,14 @@
 $( document ).ready(function() {
 	var welcomeText = $("#landingText").val();
 	console.log(welcomeText);
-	var code = $('#content_to_save').val();
-	console.log(code);
-	$('#view_foreditcontent').css('display', 'block');
 	$('#landing-panel').html(marked(welcomeText));
+	var editor = ace.edit("editor");
+	var code = editor.getSession().getValue();
+	$('#view_foreditcontent').css('display', 'block');
+	$('#edit_foreditcontent').css('display', 'none');
+	$('#asset-mask').css('display', 'none');
 	$('#view_foreditcontent').html(marked(code));
+	$('#content_to_save').val(code);
 	$("#edit-button").removeAttr("disabled", "disabled");
 	$("#view-button").attr("disabled", "disabled");
 	$("#h1-button").attr("disabled", "disabled");
@@ -19,8 +22,6 @@ $( document ).ready(function() {
 	$("#upload-button").attr("disabled", "disabled");
 	$("#hr-button").attr("disabled", "disabled");
 	$("#table-button").attr("disabled", "disabled");
-	$('#edit_foreditcontent').css('display', 'none');
-	$('#asset-mask').css('display', 'none');
 })
 
 $( "#edit-button" ).click(function() {
