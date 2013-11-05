@@ -1,7 +1,7 @@
 $( document ).ready(function() {
 	var welcomeText = $("#landingText").val();
 	console.log(welcomeText);
-	var data = $('#view_foreditcontent').val();
+	var data = $('#content_to_save').val();
 	console.log(data);
 	$('#landing-panel').html(marked(welcomeText));
 })
