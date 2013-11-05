@@ -1,13 +1,13 @@
 $( document ).ready(function() {
 	var welcomeText = $("#landingText").val();
 	console.log(welcomeText);
+	$('#landing-panel').html(marked(welcomeText));
 	var editor = ace.edit("editor");
 	var code = editor.getSession().getValue();
 	$('#view_foreditcontent').css('display', 'block');
 	$('#edit_foreditcontent').css('display', 'none');
 	$('#asset-mask').css('display', 'none');
 	$('#view_foreditcontent').html(marked(code));
-	$('#landing-panel').html(marked(welcomeText));
 	$('#content_to_save').val(code);
 	$("#edit-button").removeAttr("disabled", "disabled");
 	$("#view-button").attr("disabled", "disabled");
