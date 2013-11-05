@@ -1,27 +1,31 @@
 $( document ).ready(function() {
-	var welcomeText = $("#landingText").val();
-	console.log(welcomeText);
-	$('#landing-panel').html(marked(welcomeText));
-	var editor = ace.edit("editor");
-	var code = editor.getSession().getValue();
-	$('#view_foreditcontent').css('display', 'block');
-	$('#edit_foreditcontent').css('display', 'none');
-	$('#asset-mask').css('display', 'none');
-	$('#view_foreditcontent').html(marked(code));
-	$('#content_to_save').val(code);
-	$("#edit-button").removeAttr("disabled", "disabled");
-	$("#view-button").attr("disabled", "disabled");
-	$("#h1-button").attr("disabled", "disabled");
-	$("#h2-button").attr("disabled", "disabled");
-	$("#h3-button").attr("disabled", "disabled");
-	$("#bold-button").attr("disabled", "disabled");
-	$("#italic-button").attr("disabled", "disabled");
-	$("#link-button").attr("disabled", "disabled");
-	$("#bullet-button").attr("disabled", "disabled");
-	$("#code-button").attr("disabled", "disabled");
-	$("#upload-button").attr("disabled", "disabled");
-	$("#hr-button").attr("disabled", "disabled");
-	$("#table-button").attr("disabled", "disabled");
+	if($("#landingText").is('*')){
+		var welcomeText = $("#landingText").val();
+		console.log(welcomeText);
+		$('#landing-panel').html(marked(welcomeText));
+	}
+	else{
+		var editor = ace.edit("editor");
+		var code = editor.getSession().getValue();
+		$('#view_foreditcontent').css('display', 'block');
+		$('#edit_foreditcontent').css('display', 'none');
+		$('#asset-mask').css('display', 'none');
+		$('#view_foreditcontent').html(marked(code));
+		$('#content_to_save').val(code);
+		$("#edit-button").removeAttr("disabled", "disabled");
+		$("#view-button").attr("disabled", "disabled");
+		$("#h1-button").attr("disabled", "disabled");
+		$("#h2-button").attr("disabled", "disabled");
+		$("#h3-button").attr("disabled", "disabled");
+		$("#bold-button").attr("disabled", "disabled");
+		$("#italic-button").attr("disabled", "disabled");
+		$("#link-button").attr("disabled", "disabled");
+		$("#bullet-button").attr("disabled", "disabled");
+		$("#code-button").attr("disabled", "disabled");
+		$("#upload-button").attr("disabled", "disabled");
+		$("#hr-button").attr("disabled", "disabled");
+		$("#table-button").attr("disabled", "disabled");
+	}
 })
 
 $( "#edit-button" ).click(function() {
