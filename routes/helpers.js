@@ -3,7 +3,19 @@ var fs = require( 'fs' );
 var async = require( 'async' );
 
 exports.newlab = function(req, callback){
-	callback.send("hi");
+	helpers.get_file_structure(req, function(files){
+		helpers.get_file(req, function(result){ 
+			res.render('index', {
+				logged_in: 'true',
+				root: './public', 
+				contents: result.contents, 
+				files: files, 
+				blob: result.blob, 
+				saveurl: result.saveurl,
+				FILEPICKER_KEY: process.env.FILEPICKER_KEY
+			});
+		});
+	})
 }
 
 exports.getLandingPage = function(req, callback){
