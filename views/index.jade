@@ -16,8 +16,8 @@ block nav
         each file in files
           li
             a(href=file.url) #{file.month}.#{file.day} #{file.name}
-        li a(href="/") 
-          Make New Lab
+        li 
+          a(href="/") Make New Lab
   .log-in-out
     if(logged_in=='true')
       a(href="/logout") 
