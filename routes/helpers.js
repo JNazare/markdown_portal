@@ -38,6 +38,7 @@ exports.get_folder_structure = function(req, callback){
 exports.get_file_structure = function(req, callback){
 	var mypath = '/repos/StartupInstitute/curriculum/contents/'+req.track+'?'+req.session.token;
 	var options = {
+	headers : {"User-Agent": "Curriculum Github"},
     url: 'https://api.github.com'+mypath,
     method: 'GET'};
 	request(options, function (error, response, contents) {
@@ -62,6 +63,7 @@ exports.get_file_structure = function(req, callback){
 exports.get_file = function(req, callback){
 	var mypath = '/repos/StartupInstitute/curriculum/contents/'+req.track+'/'+req.params.file+'.md?'+req.session.token;
 	var options = {
+	headers : {"User-Agent": "Curriculum Github"},
     url: 'https://api.github.com'+mypath,
     method: 'GET',
     headers: { 'Accept': 'application/vnd.github.v3.raw' }};
@@ -85,6 +87,7 @@ exports.save_file = function(req, callback){
 	var sha = req.body.blob_to_save;
 
 	var options = {
+		headers : {"User-Agent": "Curriculum Github"},
 		"method" : "PUT",
 		"url" : full_path,
 		"json" : {
