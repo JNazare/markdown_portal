@@ -14,12 +14,16 @@ exports.getLandingPage = function(req, callback){
 }
 
 exports.get_folder_structure = function(req, callback){
+	console.log(req.session.token);
 	var mypath = '/repos/StartupInstitute/curriculum/contents?'+req.session.token;
+	console.log(mypath);
 	var options = {
+	headers : {"User-Agent": "Curriculum Github"},
     url: 'https://api.github.com'+mypath,
     method: 'GET'};
 	request(options, function (error, response, contents) {
 		if (error) { console.log(error); }
+		console.log(contents);
 		if (!error && response.statusCode == 200) {
 			contents = JSON.parse(contents);
 			var folders = []
