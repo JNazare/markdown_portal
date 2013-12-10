@@ -63,14 +63,23 @@ exports.get_file_structure = function(req, callback){
 exports.get_file = function(req, callback){
 	var mypath = '/repos/StartupInstitute/curriculum/contents/'+req.track+'/'+req.params.file+'.md?'+req.session.token;
 	var options = {
-	headers : {"User-Agent": "Curriculum Github"},
-    url: 'https://api.github.com'+mypath,
-    method: 'GET',
-    headers: { 'Accept': 'application/vnd.github.v3.raw' }};
+		headers: { 
+    		'User-Agent': 'Curriculum Github',
+    		'Accept': 'application/vnd.github.v3.raw' 
+    	},
+    	url: 'https://api.github.com'+mypath,
+    	method: 'GET'
+    };
 	request(options, function (error, response, contents) {
+		console.log(contents);
 		if (error) { console.log(error); }
 		if (!error && response.statusCode == 200) {
-			request('https://api.github.com'+mypath, function (error, reply, metadata){
+			var options = {
+				headers : {"User-Agent": "Curriculum Github"},
+				url : 'https://api.github.com'+mypath
+			}
+			request(options, function (error, reply, metadata){
+				console.log(metadata);
 				var blob = JSON.parse(metadata).sha; 
 				callback({"contents": contents, "blob": blob, "saveurl": "/"+req.track+"/"+req.params.file+"/save"});
 			})
@@ -87,7 +96,7 @@ exports.save_file = function(req, callback){
 	var sha = req.body.blob_to_save;
 
 	var options = {
-		headers : {"User-Agent": "Curriculum Github"},
+		"headers" : {"User-Agent": "Curriculum Github"},
 		"method" : "PUT",
 		"url" : full_path,
 		"json" : {
